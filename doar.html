@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Doar Alimentos - Compartilha Alimento</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <div class="logo">
+                <i class="fas fa-hand-holding-heart logo-icon"></i>
+                <h1>Compartilha<span>Alimento</span></h1>
+            </div>
+            <nav class="nav">
+                <ul>
+                    <li><a href="index.html">Início</a></li>
+                    <li><a href="doar.html" class="active">Doar</a></li>
+                    <li><a href="buscar.html">Buscar</a></li>
+                    <li><a href="login.html" class="btn-login">Entrar</a></li>
+                </ul>
+            </nav>
+            <div class="mobile-menu">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+    </header>
+
+    <main class="donation-page">
+        <div class="container">
+            <div class="page-header">
+                <h2>Cadastrar Doação</h2>
+                <p>Informe os detalhes dos alimentos que você deseja doar</p>
+            </div>
+            
+            <form id="donationForm" class="donation-form">
+                <div class="form-section">
+                    <h3><i class="fas fa-info-circle"></i> Informações Básicas</h3>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="foodType">Tipo de Alimento</label>
+                            <select id="foodType" name="foodType" required>
+                                <option value="">Selecione...</option>
+                                <option value="frutas">Frutas</option>
+                                <option value="verduras">Verduras</option>
+                                <option value="legumes">Legumes</option>
+                                <option value="laticinios">Laticínios</option>
+                                <option value="paes">Pães e massas</option>
+                                <option value="enlatados">Enlatados</option>
+                                <option value="outros">Outros</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="quantity">Quantidade Aproximada</label>
+                            <input type="text" id="quantity" name="quantity" placeholder="Ex: 5 caixas, 10kg" required>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="description">Descrição Detalhada</label>
+                        <textarea id="description" name="description" rows="3" placeholder="Descreva os itens que está doando, condições, etc." required></textarea>
+                    </div>
+                </div>
+                
+                <div class="form-section">
+                    <h3><i class="fas fa-calendar-alt"></i> Validade e Disponibilidade</h3>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="expiryDate">Data de Validade</label>
+                            <input type="date" id="expiryDate" name="expiryDate" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="availableUntil">Disponível Até</label>
+                            <input type="datetime-local" id="availableUntil" name="availableUntil" required>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="storageInstructions">Instruções de Armazenamento</label>
+                        <input type="text" id="storageInstructions" name="storageInstructions" placeholder="Ex: Manter refrigerado">
+                    </div>
+                </div>
+                
+                <div class="form-section">
+                    <h3><i class="fas fa-camera"></i> Fotos (opcional)</h3>
+                    <div class="image-upload">
+                        <div class="upload-area" id="uploadArea">
+                            <i class="fas fa-cloud-upload-alt"></i>
+                            <p>Arraste e solte fotos aqui ou clique para selecionar</p>
+                            <input type="file" id="foodImages" name="foodImages" accept="image/*" multiple style="display: none;">
+                        </div>
+                        <div class="image-preview" id="imagePreview"></div>
+                    </div>
+                </div>
+                
+                <div class="form-section">
+                    <h3><i class="fas fa-map-marker-alt"></i> Local de Retirada</h3>
+                    <div class="form-group">
+                        <label for="pickupLocation">Endereço</label>
+                        <input type="text" id="pickupLocation" name="pickupLocation" required>
+                    </div>
+                    
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="pickupInstructions">Instruções para Retirada</label>
+                            <input type="text" id="pickupInstructions" name="pickupInstructions" placeholder="Ex: Pedir no balcão, vir após 14h">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="contactPhone">Telefone para Contato</label>
+                            <input type="tel" id="contactPhone" name="contactPhone" required>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <div id="map" style="height: 300px; width: 100%; border-radius: var(--border-radius); margin-top: 15px;"></div>
+                        <small>Marque no mapa o local exato da retirada</small>
+                    </div>
+                </div>
+                
+                <div class="form-actions">
+                    <button type="submit" class="btn btn-primary">Publicar Doação</button>
+                    <button type="button" class="btn btn-secondary">Salvar como Rascunho</button>
+                </div>
+            </form>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-logo">
+                <i class="fas fa-hand-holding-heart logo-icon"></i>
+                <h3>Compartilha<span>Alimento</span></h3>
+                <p>Reduzindo desperdício, combatendo a fome.</p>
+            </div>
+            <div class="footer-links">
+                <div class="footer-column">
+                    <h4>Plataforma</h4>
+                    <ul>
+                        <li><a href="index.html">Como funciona</a></li>
+                        <li><a href="doar.html">Doar alimentos</a></li>
+                        <li><a href="buscar.html">Buscar doações</a></li>
+                        <li><a href="#">Perguntas frequentes</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Sobre nós</h4>
+                    <ul>
+                        <li><a href="#">Nossa missão</a></li>
+                        <li><a href="#">Impacto social</a></li>
+                        <li><a href="#">Parceiros</a></li>
+                        <li><a href="#">Contato</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Legal</h4>
+                    <ul>
+                        <li><a href="#">Termos de uso</a></li>
+                        <li><a href="#">Política de privacidade</a></li>
+                        <li><a href="#">Segurança</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div class="container">
+                <p>&copy; Fatec. Todos os direitos reservados.</p>
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script src="mapa.js"></script>
+    <script>
+
+           document.addEventListener('DOMContentLoaded', function() {
+            const uploadArea = document.getElementById('uploadArea');
+            const fileInput = document.getElementById('foodImages');
+            const imagePreview = document.getElementById('imagePreview');
+            
+            uploadArea.addEventListener('click', function() {
+                fileInput.click();
+            });
+            
+            uploadArea.addEventListener('dragover', function(e) {
+                e.preventDefault();
+                uploadArea.classList.add('dragover');
+            });
+            
+            uploadArea.addEventListener('dragleave', function() {
+                uploadArea.classList.remove('dragover');
+            });
+            
+            uploadArea.addEventListener('drop', function(e) {
+                e.preventDefault();
+                uploadArea.classList.remove('dragover');
+                handleFiles(e.dataTransfer.files);
+            });
+            
+            fileInput.addEventListener('change', function() {
+                if (fileInput.files.length > 0) {
+                    handleFiles(fileInput.files);
+                }
+            });
+            
+            function handleFiles(files) {
+                for (let i = 0; i < files.length; i++) {
+                    const file = files[i];
+                    if (!file.type.match('image.*')) continue;
+                    
+                    const reader = new FileReader();
+                    reader.onload = function(e) {
+                        const imgContainer = document.createElement('div');
+                        imgContainer.className = 'preview-item';
+                        
+                        const img = document.createElement('img');
+                        img.src = e.target.result;
+                        
+                        const removeBtn = document.createElement('span');
+                        removeBtn.className = 'remove-image';
+                        removeBtn.innerHTML = '&times;';
+                        removeBtn.addEventListener('click', function() {
+                            imgContainer.remove();
+                        });
+                        
+                        imgContainer.appendChild(img);
+                        imgContainer.appendChild(removeBtn);
+                        imagePreview.appendChild(imgContainer);
+                    };
+                    reader.readAsDataURL(file);
+                }
+            }
+            
+            const donationForm = document.getElementById('donationForm');
+            if (donationForm) {
+                donationForm.addEventListener('submit', function(e) {
+                    e.preventDefault();
+                    alert('Doação cadastrada com sucesso! Em breve alguém entrará em contato para agendar a retirada.');
+                    window.location.href = 'index.html?success=Doação cadastrada com sucesso!';
+                });
+            }
+        });
+    </script>
+</body>
+</html>

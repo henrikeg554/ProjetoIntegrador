@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Buscar Doações - Compartilha Alimento</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <div class="logo">
+                <i class="fas fa-hand-holding-heart logo-icon"></i>
+                <h1>Compartilha<span>Alimento</span></h1>
+            </div>
+            <nav class="nav">
+                <ul>
+                    <li><a href="index.html">Início</a></li>
+                    <li><a href="doar.html">Doar</a></li>
+                    <li><a href="buscar.html" class="active">Buscar</a></li>
+                    <li><a href="login.html" class="btn-login">Entrar</a></li>
+                </ul>
+            </nav>
+            <div class="mobile-menu">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+    </header>
+
+    <main class="search-page">
+        <div class="container">
+            <div class="search-header">
+                <h2>Buscar Doações Disponíveis</h2>
+                <p>Encontre alimentos disponíveis para doação perto de você</p>
+                
+                <div class="search-filters">
+                    <div class="search-bar">
+                        <input type="text" placeholder="Buscar por tipo de alimento...">
+                        <button class="btn btn-primary"><i class="fas fa-search"></i></button>
+                    </div>
+                    
+                    <div class="filter-options">
+                        <div class="filter-group">
+                            <label for="foodType">Tipo:</label>
+                            <select id="foodType">
+                                <option value="">Todos</option>
+                                <option value="frutas">Frutas</option>
+                                <option value="verduras">Verduras</option>
+                                <option value="legumes">Legumes</option>
+                                <option value="laticinios">Laticínios</option>
+                                <option value="paes">Pães e massas</option>
+                                <option value="enlatados">Enlatados</option>
+                            </select>
+                        </div>
+                        
+                        <div class="filter-group">
+                            <label for="distance">Distância:</label>
+                            <select id="distance">
+                                <option value="5">Até 5 km</option>
+                                <option value="10">Até 10 km</option>
+                                <option value="20">Até 20 km</option>
+                                <option value="50">Até 50 km</option>
+                            </select>
+                        </div>
+                        
+                        <div class="filter-group">
+                            <label for="expiry">Validade:</label>
+                            <select id="expiry">
+                                <option value="1">Hoje</option>
+                                <option value="3">Próximos 3 dias</option>
+                                <option value="7">Próximos 7 dias</option>
+                                <option value="30">Próximos 30 dias</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="search-content">
+                <div class="map-view" id="donationMap">
+                    <div class="map-placeholder">
+                        <i class="fas fa-map-marked-alt"></i>
+                        <p>Mapa interativo será exibido aqui</p>
+                        <small>Mostrando doações próximas à sua localização</small>
+                    </div>
+                </div>
+                
+                <div class="donation-list">
+                    <div class="donation-card">
+                        <div class="donation-images">
+                            <img src="Frutas e Verduras Ca.png" alt="Doação de alimentos">
+                        </div>
+                        <div class="donation-details">
+                            <h3>Frutas e Verduras</h3>
+                            <div class="donation-meta">
+                                <span class="quantity"><i class="fas fa-boxes"></i> 5 caixas</span>
+                                <span class="expiry"><i class="fas fa-clock"></i> Vence em 2 dias</span>
+                                <span class="distance"><i class="fas fa-map-marker-alt"></i> 1.2 km</span>
+                            </div>
+                            <p class="description">Caixas de bananas, maçãs e alface. Algumas frutas com pequenos amassados mas próprias para consumo.</p>
+                            <div class="donation-footer">
+                                <div class="donor-info">
+                                    <img src="Mercado bom preço.png" alt="Doador">
+                                    <span>Mercado Bom Preço</span>
+                                </div>
+                                <button class="btn btn-primary">Agendar Retirada</button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="donation-card">
+                        <div class="donation-images">
+                            <img src="Pães franceses e bol.png" alt="Doação de alimentos">
+                        </div>
+                        <div class="donation-details">
+                            <h3>Pães e Bolos</h3>
+                            <div class="donation-meta">
+                                <span class="quantity"><i class="fas fa-boxes"></i> 20 unidades</span>
+                                <span class="expiry"><i class="fas fa-clock"></i> Vence hoje</span>
+                                <span class="distance"><i class="fas fa-map-marker-alt"></i> 800 m</span>
+                            </div>
+                            <p class="description">Pães franceses e bolos do dia, assados esta manhã. Precisam ser retirados até o final do dia.</p>
+                            <div class="donation-footer">
+                                <div class="donor-info">
+                                    <img src="Padaria.png" alt="Doador">
+                                    <span>Padaria Pão Quente</span>
+                                </div>
+                                <button class="btn btn-primary">Agendar Retirada</button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="donation-card">
+                        <div class="donation-images">
+                            <img src="Latas de milho, ervi.png" alt="Doação de alimentos">
+                        </div>
+                        <div class="donation-details">
+                            <h3>Enlatados Diversos</h3>
+                            <div class="donation-meta">
+                                <span class="quantity"><i class="fas fa-boxes"></i> 15 latas</span>
+                                <span class="expiry"><i class="fas fa-clock"></i> Vence em 6 meses</span>
+                                <span class="distance"><i class="fas fa-map-marker-alt"></i> 3.5 km</span>
+                            </div>
+                            <p class="description">Latas de milho, ervilha e seleta de legumes. Embalagens perfeitas, próximo à data de validade.</p>
+                            <div class="donation-footer">
+                                <div class="donor-info">
+                                    <img src="Supermercado Econômi.png" alt="Doador">
+                                    <span>Supermercado Econômico</span>
+                                </div>
+                                <button class="btn btn-primary">Agendar Retirada</button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="pagination">
+                        <button class="btn btn-secondary" disabled><i class="fas fa-chevron-left"></i> Anterior</button>
+                        <span>Página 1 de 5</span>
+                        <button class="btn btn-secondary">Próxima <i class="fas fa-chevron-right"></i></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-logo">
+                <i class="fas fa-hand-holding-heart logo-icon"></i>
+                <h3>Compartilha<span>Alimento</span></h3>
+                <p>Reduzindo desperdício, combatendo a fome.</p>
+            </div>
+            <div class="footer-links">
+                <div class="footer-column">
+                    <h4>Plataforma</h4>
+                    <ul>
+                        <li><a href="index.html">Como funciona</a></li>
+                        <li><a href="doar.html">Doar alimentos</a></li>
+                        <li><a href="buscar.html">Buscar doações</a></li>
+                        <li><a href="#">Perguntas frequentes</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Sobre nós</h4>
+                    <ul>
+                        <li><a href="#">Nossa missão</a></li>
+                        <li><a href="#">Impacto social</a></li>
+                        <li><a href="#">Parceiros</a></li>
+                        <li><a href="#">Contato</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Legal</h4>
+                    <ul>
+                        <li><a href="#">Termos de uso</a></li>
+                        <li><a href="#">Política de privacidade</a></li>
+                        <li><a href="#">Segurança</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div class="container">
+                <p>&copy; Fatec. Todos os direitos reservados.</p>
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script src="mapa.js"></script>
+</body>
+</html>
