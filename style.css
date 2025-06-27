@@ -144,7 +144,6 @@ ul {
 
 .logo {
     display: flex;
-    border-radius: 15%;
     align-items: center;
 }
 
@@ -156,6 +155,7 @@ ul {
 
 .logo h1 {
     font-size: 1.5rem;
+    border-radius: 15%;
     color: var(--text-color);
 }
 
