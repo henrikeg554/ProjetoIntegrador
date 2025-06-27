@@ -239,13 +239,13 @@ ul {
 
 .hero-image {
     flex: 1;
+    border-radius: 15%;
     min-width: 300px;
     text-align: center;
 }
 
 .hero-image img {
     max-width: 100%;
-    border-radius: 15%;
     height: auto;
     animation: float 3s ease-in-out infinite;
 }
