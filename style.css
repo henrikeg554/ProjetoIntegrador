@@ -239,7 +239,6 @@ ul {
 
 .hero-image {
     flex: 1;
-    border-radius: 15%;
     min-width: 300px;
     text-align: center;
 }
